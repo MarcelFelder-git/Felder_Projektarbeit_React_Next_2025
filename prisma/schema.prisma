@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // uses connection pooling
+}
+
+// Nach jeder Änderung am Schema:
+// npx prisma migrate dev --name nameDerÄnderung
+
+// Grafische Oberfläche starten:
+// npx prisma studio
+
+// Tabellenname PascalCase und Singular
