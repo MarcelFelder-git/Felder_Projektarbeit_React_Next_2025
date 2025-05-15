@@ -14,6 +14,11 @@ body {
 	background-color: var(--header-footer-background);
 }
 
+/* .site-header {
+	border-radius: 10% 30% 10% 30%;
+	margin-top: 1rem;
+} */
+
 .site-header {
 	color: var(--heading-color);
 	display: flex;
@@ -42,6 +47,7 @@ main {
 .site-footer {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	gap: 1rem;
 }
 
@@ -76,7 +82,7 @@ main {
 	display: var(--grid-display, grid);
 	grid-template-columns: repeat(
 		var(--grid-columns, auto-fill),
-		minmax(min(var(--grid-min-width, 15rem), 100%), 1fr)
+		minmax(min(var(--grid-min-width, 15rem), 80%), 1fr)
 	);
 	gap: var(--grid-gap, 1rem);
 }

@@ -1,18 +1,17 @@
-//import { signIn } from '@/auth';
-//import { FaGithub } from 'react-icons/fa';
+import { signIn } from 'next-auth/react';
+import { FaGithub } from 'react-icons/fa';
 
-export default function SignIn() {
-  return null;
-  /*   return (
-    <form
-      action={async () => {
-        'use server';
-        await signIn();
-      }}
-    >
-      <button type="submit">
-        Anmelden mit GitHub <FaGithub />
-      </button>
-    </form>
-  ); */
+export function SignIn() {
+	return (
+		<form
+			onSubmit={async (e) => {
+				e.preventDefault();
+				await signIn('github');
+			}}
+		>
+			<button type="submit">
+				Anmelden mit GitHub <FaGithub />
+			</button>
+		</form>
+	);
 }

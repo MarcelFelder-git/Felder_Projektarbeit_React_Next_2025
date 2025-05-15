@@ -1,39 +1,43 @@
 :root {
-  /*  Signalisiere, dass die Seite helle und dunkle Darstellung unterstützt.
-	https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#aa-handling-user-agent-styles */
-  color-scheme: light dark;
+	color-scheme: dark light;
 
-  &[data-color-theme='dark'] {
-    /* Sorge dafür, dass bei von den Systemeinstellungen abweichendem Theme
-	auch UI-Elemente in hell oder dunkel angezeigt werden. */
-    color-scheme: dark;
-  }
+	&[data-color-theme='dark'] {
+		color-scheme: dark;
+	}
 
-  &[data-color-theme='light'] {
-    color-scheme: light;
-  }
+	&[data-color-theme='light'] {
+		color-scheme: light;
+	}
 
-  /* Hier eigene Farben definieren oder Farben von OpenProps nehmen.
-	https://open-props.style/#colors
-	*/
-  --my-color: var(--stone-3);
-  --imperial-red: hsl(354.8 60.6% 51.2%);
-  --honeydew: hsl(105 55% 96%);
-  --powder-blue: hsl(182 43% 76%);
-  --celadon-blue: hsl(203 39% 44%);
-  --prussian-blue: hsl(215 50% 23%);
-  --black: hsl(0 10% 6%);
+	/* Basis-Farben */
+	--black: #0a0a0a;
+	--dark-gray: #333235;
+	--card-bg: #3e39405f;
+	--card-bg-alt: #2f2f40;
+	--text-light: #e0e0e0;
+	--text-white: #ffffff;
+	--nav-bg-dark: #37303b;
+	--button-bg: #4b494c;
 
-  /*  Variablennamen zum Beschreiben der Funktion */
-  --background-color: var(--honeydew);
-  --text-color: var(--prussian-blue);
-  --heading-color: var(--imperial-red);
-  --link-color: var(--imperial-red);
-  --active-link-color: var(--celadon-blue);
-  --header-footer-background: var(--powder-blue);
-  --header-color: var(--imperial-red);
+	/* Lila/Pink Akzente */
+	--accent: #a855f7;
+	--accent-hover: #9333ea;
+	--accent-alt: #d775e6;
+
+	/* Funktionsfarben */
+	--background-color: var(--black);
+	--nav-background-color: var(--nav-bg-dark);
+	--home-button-bg: var(--button-bg);
+	--card-color: var(--card-bg);
+	--text-color: var(--text-light);
+	--heading-color: var(--text-white);
+	--link-color: var(--accent);
+	--active-link-color: var(--accent-alt);
+	--header-footer-background: var(--dark-gray);
+	--header-color: var(--text-white);
 }
 
+/* Smooth transition for dark/light switch */
 * {
-  transition: color, background-color 0.5s ease;
+	transition: color 0.3s ease, background-color 0.3s ease;
 }

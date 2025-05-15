@@ -1,16 +1,20 @@
-/* import { auth } from '@/auth';
-import SignIn from './Auth/SignIn';
-import User from './Auth/User';
-import { SignOut } from './Auth/SignOut';
- */
-export default async function Footer() {
-  // const session = await auth();
+'use client';
 
-  return (
-    <footer className="site-footer">
-      <small>&copy; {new Date().getFullYear()}</small>
-      {/*   {session ? <SignOut /> : <SignIn />}
-      {session && <User {...session.user} />} */}
-    </footer>
-  );
+import { useSession } from 'next-auth/react';
+import { SignIn } from './Auth/SignIn';
+import { SignOut } from './Auth/SignOut';
+import User from './Auth/User';
+
+export default function Footer() {
+	const { data: session } = useSession();
+
+	return (
+		<footer className="site-footer">
+			<small>&copy; {new Date().getFullYear()}</small>
+			<div className="github-login">
+				{session && <User {...session.user} />}
+				{session ? <SignOut /> : <SignIn />}{' '}
+			</div>
+		</footer>
+	);
 }

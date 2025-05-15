@@ -1,15 +1,14 @@
-//import { signOut } from '@/auth';
+import { signOut } from 'next-auth/react';
 
 export function SignOut() {
-  return null;
-  /* return (
-   <form
-      action={async () => {
-        'use server';
-        await signOut();
-      }}
-    >
-      <button type="submit">Abmelden</button>
-    </form> 
-  );*/
+	return (
+		<form
+			onSubmit={async (e) => {
+				e.preventDefault();
+				await signOut();
+			}}
+		>
+			<button type="submit">Abmelden</button>
+		</form>
+	);
 }

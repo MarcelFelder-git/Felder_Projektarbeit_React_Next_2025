@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // uses connection pooling
+}
+
+// Nach jeder Änderung am Schema:
+// npx prisma migrate dev --name nameDerÄnderung
+
+// Grafische Oberfläche starten:
+// npx prisma studio
+
+// Tabellenname PascalCase und Singular
+// prisma/schema.prisma
+
+model User {
+  id        String      @id @default(cuid())
+  email     String      @unique
+  watchlist Watchlist[]
+}
+
+model Watchlist {
+  id        String   @id @default(cuid())
+  gameId    Int // RAWG Game ID
+  gameSlug  String // z.B. 'elden-ring'
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime @default(now())
+}

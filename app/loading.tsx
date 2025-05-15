@@ -1,3 +1,7 @@
 export default function LoadingPage() {
-  return <h1>Seite wird geladen…</h1>;
+	return (
+		<main>
+			<h2>Games Loading...</h2>
+		</main>
+	);
 }

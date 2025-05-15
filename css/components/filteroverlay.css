@@ -1,0 +1,49 @@
+.filter-overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+}
+
+.filter-modal {
+	background: #1a1a1a;
+	color: white;
+	padding: 2rem;
+	border-radius: 12px;
+	max-height: 80vh;
+	width: 90vw;
+	max-width: 1200px;
+	overflow-y: auto;
+	position: relative;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.filter-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: transparent;
+	border: none;
+	color: white;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.filter-section {
+	margin-bottom: 2rem;
+}
+
+.filter-section label {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.filter-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
+}

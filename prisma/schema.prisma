@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  output   = "./generated/prisma-client"
 }
 
 datasource db {
@@ -17,3 +18,19 @@ datasource db {
 // npx prisma studio
 
 // Tabellenname PascalCase und Singular
+// prisma/schema.prisma
+
+model User {
+  id        String      @id @default(cuid())
+  email     String      @unique
+  watchlist Watchlist[]
+}
+
+model Watchlist {
+  id        String   @id @default(cuid())
+  gameId    Int
+  gameSlug  String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime @default(now())
+}
