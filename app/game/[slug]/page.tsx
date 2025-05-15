@@ -13,7 +13,7 @@ type GameDetailPageProps = {
 	params: { slug: string };
 };
 
-export async function getGame(slug: string): Promise<GameDetails | null> {
+async function getGame(slug: string): Promise<GameDetails | null> {
 	try {
 		const res = await fetch(
 			`https://api.rawg.io/api/games/${slug}?key=${API_KEY}`,
