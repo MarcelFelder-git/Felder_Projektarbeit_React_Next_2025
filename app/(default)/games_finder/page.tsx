@@ -27,13 +27,14 @@ export default function GamesPage() {
 
 	useEffect(() => {
 		setGames([]);
-		setPage(1);
-	}, [search, selectedPlatforms, selectedGenres, selectedTags]);
-
-	useEffect(() => {
 		setIsNewSearch(true);
 		setPage(1);
 	}, [search, selectedPlatforms, selectedGenres, selectedTags]);
+
+	/* useEffect(() => {
+		setIsNewSearch(true);
+		setPage(1);
+	}, [search, selectedPlatforms, selectedGenres, selectedTags]); */
 
 	useEffect(() => {
 		if (!hasFilters) return;

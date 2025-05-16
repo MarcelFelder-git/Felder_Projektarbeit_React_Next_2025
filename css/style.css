@@ -116,6 +116,11 @@ img {
 	align-items: flex-end;
 }
 
+.watchlist {
+	margin-bottom: 1rem;
+	list-style-type: none;
+}
+
 .watchlist-item {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;

@@ -5,7 +5,7 @@ type Props = GitHubUser;
 export default function User({ name, image }: Props) {
 	return (
 		<div>
-			Angemeldet als {name}
+			Signed in as {name}
 			{image && (
 				<Image
 					src={image}

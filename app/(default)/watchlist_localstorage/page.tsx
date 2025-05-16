@@ -34,7 +34,7 @@ export default function Watchlist() {
 	if (games.length === 0)
 		return (
 			<main>
-				<p>Your Watchlist is empty.</p>
+				<p>No games in your watchlist yet</p>
 			</main>
 		);
 
@@ -43,7 +43,7 @@ export default function Watchlist() {
 			<h1>Your Watchlist</h1>
 			<ul>
 				{games.map((game) => (
-					<li key={game.slug}>
+					<li key={game.slug} className="watchlist">
 						<div className="watchlist-item">
 							<span>{game.name}</span>{' '}
 							<Link href={`/game/${game.slug}`}>

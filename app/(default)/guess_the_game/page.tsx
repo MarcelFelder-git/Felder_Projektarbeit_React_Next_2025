@@ -78,7 +78,7 @@ export default function GuessTheGame() {
 	return (
 		<main>
 			<div>
-				<h1>Guess the Game</h1>
+				<h2>Guess the Game</h2>
 
 				<img
 					src={quiz.correctGame.short_screenshots[0].image}

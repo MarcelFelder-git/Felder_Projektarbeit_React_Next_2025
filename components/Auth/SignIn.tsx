@@ -10,7 +10,7 @@ export function SignIn() {
 			}}
 		>
 			<button type="submit">
-				Anmelden mit GitHub <FaGithub />
+				Sign in with GitHub <FaGithub />
 			</button>
 		</form>
 	);
