@@ -23,6 +23,7 @@ _This project was created as part of my frontend developer training project work
 
 - Data fetching is currently split between client and server due to a temporary CORS issue
 - A second API key/account was used to resolve it during development
+- **Note:** This section is still a work in progress and may be revised.
 
 ## Getting Started
 
